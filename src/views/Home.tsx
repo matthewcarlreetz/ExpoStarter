@@ -10,6 +10,10 @@ export default function Home() {
     <View style={styles.container}>
       <Button text="Use State" onPress={() => navigation.navigate('UseState')}></Button>
       <Button text="Use Effect" onPress={() => navigation.navigate('UseEffect')}></Button>
+      <Button text="Use Reducer" onPress={() => navigation.navigate('UseReducer')}></Button>
+      <Button text="Use Context" onPress={() => navigation.navigate('UseContext')}></Button>
+      <Button text="Use Memo" onPress={() => navigation.navigate('UseMemo')}></Button>
+      <Button text="Use Callback" onPress={() => navigation.navigate('UseCallback')}></Button>
     </View>
   );
 }

@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import UseState from './components/UseState'
-import Home from './components/Home'
+import UseState from './src/views/UseState';
+import Home from './src/views/Home';
 
-export default function App() {
+const App = () => {
   const Stack = createStackNavigator();
 
   return (
@@ -15,4 +15,6 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
+
+export default App;

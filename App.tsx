@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import UseState from './src/views/UseState';
+import UseEffect from './src/views/UseEffect';
 import Home from './src/views/Home';
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Home">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="UseState" component={UseState} />
+        <Stack.Screen name="UseEffect" component={UseEffect} />
       </Stack.Navigator>
     </NavigationContainer>
   );

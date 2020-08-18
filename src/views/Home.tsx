@@ -1,15 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Button from '../components/Button';
 
 export default function Home() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('UseState')}>
-        <Text style={styles.buttonText}>Use State</Text>
-      </TouchableOpacity>
+      <Button text="Use State" onPress={() => navigation.navigate('UseState')}></Button>
+      <Button text="Use Effect" onPress={() => navigation.navigate('UseEffect')}></Button>
     </View>
   );
 }

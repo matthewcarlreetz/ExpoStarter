@@ -1,46 +1,18 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import UseState from './components/UseState'
+import Home from './components/Home'
 
 export default function App() {
-  const [count, setCount] = useState(0);
-  const handleIncrement = () => setCount(count + 1);
-  const handleDecrement = () => setCount(count - 1);
-  const handleReset = () => setCount(0);
+  const Stack = createStackNavigator();
 
   return (
-      <View style={styles.container}>
-      <Text>{`Count: ${count}`}</Text>
-
-      <View style={styles.horizontalContainer}>
-        <TouchableOpacity style={styles.button} onPress={handleIncrement}>
-          <Text style={styles.buttonText}>Increment</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={handleReset}>
-          <Text style={styles.buttonText}>Reset</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={handleDecrement}>
-          <Text style={styles.buttonText}>Decrement</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="UseState" component={UseState} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-    margin: 12,
-    flex: 1
-  },
-  horizontalContainer:{
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-between'
-  },
-  button: { margin: 12, backgroundColor: 'red', padding: 12 },
-  buttonText: { color: 'white' }
-});

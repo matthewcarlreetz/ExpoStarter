@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, GestureResponderEvent } from 'react-native';
 
-type Props = { onPress: () => void; text: string };
+type Props = { onPress: (event: GestureResponderEvent) => void; text: string };
 
 export default function Button({ onPress, text }: Props) {
   return (
